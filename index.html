@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alvinn_t.ahmd</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .popins {
+    font-family: 'popins', sans-serif
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+<body>
+  <div class="max-w-4xl mx-auto flex flex-col min-h-screen">
+    <div class="navbar bg-base-100 font-inter">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
+          </div>
+          <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+            <li class="flex items-center text-center pr-4">
+              <div class="pr-2"><svg width="15" height="30" viewBox="0 0 35 30" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 30V19.4118H21V30H29.75V15.8824H35L17.5 0L0 15.8824H5.25V30H14Z" fill="black" />
+                </svg>
+              </div>
+              <a href="" class="text-base font-medium">Home</a>
+            </li>
+            <li class="flex items-center text-center pr-4">
+              <div class="pr-2"><svg width="15" height="35" viewBox="0 0 35 35" fill="none"
+                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <rect width="35" height="35" fill="url(#pattern0_14_3)" />
+                  <defs>
+                    <pattern id="pattern0_14_3" patternContentUnits="objectBoundingBox" width="1" height="1">
+                      <use xlink:href="#image0_14_3" transform="scale(0.0104167)" />
+                    </pattern>
+                    <image id="image0_14_3" width="96" height="96"
+                      xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QA/wD/AP+gvaeTAAADjElEQVR4nO3cy2sdVRgA8J+KJta06EJIEYyvVLG09bHS+sAsdSu60H+giBb3vtqFQunGjaLYrbgRV7rSioIVRLDixgeYWBW1q2pvqkmxdXFuMA0YMzN35pzJ/X7wrcLkO+f7cm/uzDnnEkIIIYQQQgghhBDGxUW5B1DBNjyEOezBdbhy+LNTWMBxHMW7OJ1hjJvSDhzBIs5vMBbxBmYzjHfTuByHcdbGC782lnEIkx2Pvfdm8ZX6hV8bn2J7pzPosdtx0uiKvxI/YneH8+ilWe0Uf3UTpjubTc9MSp9i2ir+Snwu/X8JaxzWfvFX4kBHc+qNHZp92qkap8Vb0QWO6K74K/FKJzPrgW2q3WSNKgbY2sH81nVx7gFIjxe2ZMh7BR7MkPcCJTRgbkxzo4wG7MmYO/uNWQkNuD5j7hsy5kYZj6OXcFnG3Fkf1JXwChhrJTTgj4y5f8+YG2U0YD5j7u8z5kYZDTieMfeXGXOjjAYczZj7g4y5izElPRbI8ShiqoP5rauEV8AAb2XI++Ywd5BWwpZ199e/pICbsNIc0l0DXupoTr0yKe1eaLv4xzDR0Zx6ZxontFf8n3FNZ7Ppqd3S7oVRF/8EdnU4j167Gh8Z7dtOrAFXNCHtXmhyj7CEF8V7fiPT0gJ6lUYM8JoefNQsYT1go6ak9eMHcJu0kLN6e/o8vsCHeE/cZIUQQgghhBBCCCGEEFa7JPcAhiawVzoydLLlXLtwM37D3y3nKtqdeFbanXZGeo7/C65tMecMfh3mOoP38QzuaDFnUXbiBXzjvxdT5nFjC7ln8N06eRfwMu7Rr3WS/3UVnsa3Nr6i9RPuHuEY9g5/50bzf439/l3w6aVbpO/sqXsEdVlaE27ytQJbcFD9Q+ADvC4dJO+N7dJ67KhOvi/gSdU20m7FU/hhRGM4i1cVvrPiUjyvvZ3OA7yNfbhLKsbkMKalt6x9eEd7B78HeG4416LM4BPtTLrE+Aw3jaRyI/CodNYqd1G6jlN4eAT1a2Q/zslfjFxxDk80rmJNjxjv4q9uwuMNa1nZTvzVcOCbKf7ErY0qWtGxFibR9/i4UUUrmOtoQn2M+6sWs84hvcdqXDMuKtemTgPurXHNuLiv6gV1nvotyvMNV32wqOLZ4zoNOF/jmnFSqaYlHNQea9GAzKIBmUUDMosGZBYNyCwakFk0ILNoQAghhBBCCCGEEEIIHfkHy+tVDYIG0t4AAAAASUVORK5CYII=" />
+                  </defs>
+                </svg>
+
+              </div>
+              <a href="#abot" class="text-base font-medium">About Me</a>
+            </li>
+            <li class="flex items-center text-center pr-4">
+              <div class="pr-2">
+                <img src="projek.png" class="w-5">
+              </div>
+              <a href="#projek" class="text-base font-medium">Project</a>
+            </li>
+          </ul>
+        </div>
+        <a class="btn btn-ghost text-xl">Alvin_t.ahmd</a>
+      </div>
+      <div class="navbar-end hidden lg:flex">
+        <ul class=" menu-horizontal items-center ">
+          <li class="flex items-center text-center pr-8">
+            <div class="pr-2"><svg width="15" height="30" viewBox="0 0 35 30" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 30V19.4118H21V30H29.75V15.8824H35L17.5 0L0 15.8824H5.25V30H14Z" fill="black" />
+              </svg>
+            </div>
+            <a href="" class="text-base font-medium">Home</a>
+          </li>
+          <li class="flex items-center text-center pr-8">
+            <div class="pr-2">
+              <img src="User.png" class="w-5" alt="">
+            </div>
+            <a href="#abot" class="text-base font-medium">About Me</a>
+          </li>
+          <li class="flex items-center text-center pr-8">
+            <div class="pr-2">
+              <img src="projek.png" class="w-5">
+            </div>
+            <a href="#projek" class="text-base font-medium">Project</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hero>
+      <div class="hero min-h-screen">
+        <div class="hero-content  flex-col md:flex-row-reverse md:flex-row">
+          <img src="gambar.jpg" class="md:max-w-sm  rounded-lg shadow-2x mask mask-hexagon-2" />
+          <div>
+            <h1 class="text-6xl font-bold poppins-regular" style="color: rgba(1, 141, 176, 1);">
+              Hi, I’m Alvin , a <span class="font-inter" style="color: rgba(209, 136, 79, 1);">Web Developer</span>
+            </h1>
+            <p class="py-6 font-inter">
+              Designing, Developing, and Delivering Web Excellence for into Seamless Digital Experiences
+            </p>
+            <a href="https://wa.me/6283879515805" class="btn text-white"
+              style="background-color: rgba(0, 138, 170, 1);">Hire Me
+              !</a>
+            <a href="#projek"
+              class="btn btn-outline text-[rgba(0,138,170,1)] hover:bg-[rgba(0,138,170,1)] hover:text-white"
+              style=" width: 200px;">See my project</a>
+
+          </div>
+        </div>
+      </div>
+    </hero>
+    <div class="py-24 flex flex-col justify-center items-center poppins-regular text-md">
+      <p
+        class="py-8 font-bold text-3xl bg-clip-text text-transparent bg-gradient-to-r from-green-500 via-blue-500 to-orange-300">
+        EXPERIENCE WITH</p>
+      <div class="flex md:gap-12 gap-8 px-4">
+        <!-- html -->
+        <svg width="40" height="40" stroke="currentColor" fill="currentColor" stroke-width="0" role="img"
+          viewBox="0 0 24 24" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg" class="text-orange-500">
+          <path
+            d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z">
+          </path>
+        </svg>
+        <!-- html -->
+        <!-- css -->
+        <svg width="40" height="40" stroke="currentColor" fill="currentColor" stroke-width="0" role="img"
+          viewBox="0 0 24 24" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg" class="text-blue-500">
+          <title></title>
+          <path
+            d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z">
+          </path>
+        </svg>
+        <!-- css -->
+        <!-- js -->
+        <svg width="40" height="40" stroke="currentColor" fill="currentColor" stroke-width="0" role="img"
+          viewBox="0 0 24 24" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg" class="text-yellow-400">
+          <title></title>
+          <path
+            d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z">
+          </path>
+        </svg>
+        <!-- js -->
+        <!-- bootstrap -->
+        <svg width="40" height="40" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16"
+          height="100%" width="100%" xmlns="http://www.w3.org/2000/svg" class="text-purple-500">
+          <path
+            d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z">
+          </path>
+          <path
+            d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396H5.062z">
+          </path>
+        </svg>
+        <!-- bootstrap -->
+        <!-- tailwindcss -->
+        <svg width="40" height="40" stroke="currentColor" fill="currentColor" stroke-width="0" role="img"
+          viewBox="0 0 24 24" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg" class="text-cyan-300">
+          <path
+            d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z">
+          </path>
+        </svg>
+        <!-- tailwindcss -->
+
+      </div>
+    </div>
+    <p class="text-center pt-12 text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-orange-600 to-yellow-700"
+      7 id="projek">Projek</p>
+    <div class="flex flex-wrap md:flex-row md:gap-12 px-4 py-24">
+      <div class="card bg-base-100 w-full md:w-96 shadow-xl mb-4 md:mb-0">
+        <figure>
+          <img src="perpus.png" alt="Anaya_Perpus" />
+        </figure>
+        <div class="px-4 text-white rounded-lg bg-neutral">
+          <h2 class="pt-4 font-bold text-xs">CLICK HERE TO VISIT</h2>
+          <div class="flex flex-wrap items-center pb-4">
+            <p class="pt-2 poppins-regular font-bold text-2xl">Anaya_Perpus</p>
+            <div class="ml-auto">
+              <a href="https://anayaperpus.wuaze.com/" target="_blank">
+                <img class="w-3 h-3" src="view.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-full md:w-96 shadow-xl mb-4 md:mb-0">
+        <figure>
+          <img src="psk.png" alt="Anaya_Perpus" />
+        </figure>
+        <div class="px-4 text-white rounded-lg bg-neutral">
+          <h2 class="pt-4 font-bold text-xs">CLICK HERE TO VISIT</h2>
+          <div class="flex flex-wrap items-center pb-4">
+            <p class="pt-2 poppins-regular font-bold text-2xl">Persik_App</p>
+            <div class="ml-auto">
+              <a href="https://persikapp.vercel.app/" target="_blank">
+                <img class="w-3 h-3" src="view.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-full md:w-96 shadow-xl mb-4 md:mb-0">
+        <figure>
+          <img src="moviie.png" alt="Anaya_Perpus" />
+        </figure>
+        <div class="px-4 text-white rounded-lg bg-neutral">
+          <h2 class="pt-4 font-bold text-xs">CLICK HERE TO VISIT</h2>
+          <div class="flex flex-wrap items-center pb-4">
+            <p class="pt-2 poppins-regular font-bold text-2xl">Anaya_Movie</p>
+            <div class="ml-auto">
+              <a href="https://anayaamovie.vercel.app/" target="_blank">
+                <img class="w-3 h-3" src="view.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 w-full md:w-96 shadow-xl mb-4 md:mb-0">
+        <figure>
+          <img src="todo.png" alt="Anaya_Perpus" />
+        </figure>
+        <div class="px-4 text-white rounded-lg bg-neutral">
+          <h2 class="pt-4 font-bold text-xs">CLICK HERE TO VISIT</h2>
+          <div class="flex flex-wrap items-center pb-4">
+            <p class="pt-2 poppins-regular font-bold text-2xl">Nuxt js Api Todo List</p>
+            <div class="ml-auto">
+              <a href="https://nuxtapitodo.vercel.app/" target="_blank">
+                <img class="w-3 h-3" src="view.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="abot" class="px-4 py-12">
+      <p class="text-center pb-20 text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-orange-600 to-yellow-700"
+        7 id="projek">About Me !</p>
+      <ul class="timeline timeline-snap-icon max-md:timeline-horizontal timeline-vertical ">
+        <li>
+          <div class="timeline-middle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+              <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+
+
+          <div class="timeline-start mb-10 md:text-end">
+            <time class="font-mono italic">2021-2024</time>
+            <div class="text-lg font-black poppins-regular">SMKN 2 Trenggalek</div>
+            alumni of SMKN 2 Trenggalek majoring in software engineering and have the desire to continue to develop and
+            compete in the IT world, especially web development
+          </div>
+          <hr />
+        </li>
+        <li>
+          <hr />
+          <div class="timeline-middle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+              <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div class="timeline-end mb-10">
+            <time class="font-mono italic">1january 2023- 14 juli 2023</time>
+            <div class="text-lg font-black">Frontend Web Development</div>
+            frontend web developer internship at Manggala Teknologi Nusantara in Papar Pare Kediri for 6 months and
+            became team leader during the internship
+          </div>
+          <hr />
+        </li>
+      </ul>
+    </div>
+    <footer class="footer footer-center bg-base-200 py-4">
+      <p>Copyright © 2024 - All right reserved by Alvinn_t.ahmd</p>
+    </footer>
+</body>
+
+</html>
