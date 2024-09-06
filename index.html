@@ -7,6 +7,8 @@
   <title>Alvinn_t.ahmd</title>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 </head>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
@@ -105,8 +107,10 @@
     <hero>
       <div class="hero min-h-screen">
         <div class="hero-content  flex-col md:flex-row-reverse md:flex-row">
-          <img src="gambar.jpg" class="md:max-w-sm  rounded-lg shadow-2x mask mask-hexagon-2" />
-          <div>
+          <img src="gambar.jpg" class="md:max-w-sm  rounded-lg shadow-2x mask mask-hexagon-2 " data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom" data-aos-duration="3000" />
+          <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"
+            data-aos-anchor-placement="bottom-bottom">
             <h1 class="text-6xl font-bold poppins-regular" style="color: rgba(1, 141, 176, 1);">
               Hi, I’m Alvin , a <span class="font-inter" style="color: rgba(209, 136, 79, 1);">Web Developer</span>
             </h1>
@@ -124,8 +128,9 @@
         </div>
       </div>
     </hero>
-    <div class="py-24 flex flex-col justify-center items-center poppins-regular text-md">
-      <p
+    <div data-aos="flip-up" data-aos-duration="3000"
+      class="py-24 flex flex-col justify-center items-center poppins-regular text-md">
+      <p data-aos="zoom-in-up" data-aos-duration="2000"
         class="py-8 font-bold text-3xl bg-clip-text text-transparent bg-gradient-to-r from-green-500 via-blue-500 to-orange-300">
         EXPERIENCE WITH</p>
       <div class="flex md:gap-12 gap-8 px-4">
@@ -177,10 +182,12 @@
 
       </div>
     </div>
-    <p class="text-center pt-12 text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-orange-600 to-yellow-700"
+    <p data-aos="zoom-in-down" data-aos-duration="3000"
+      class="text-center pt-12 text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-orange-600 to-yellow-700"
       7 id="projek">Projek</p>
     <div class="flex flex-wrap md:flex-row md:gap-12 px-4 py-24">
-      <div class="card bg-base-100 w-full md:w-96 shadow-xl mb-4 md:mb-0">
+      <div data-aos="zoom-in-right" data-aos-duration="3000" data-aos-offset="300" data-aos-easing="ease-in-sine"
+        class="card bg-base-100 w-full md:w-96 shadow-xl mb-4 md:mb-0">
         <figure>
           <img src="perpus.png" alt="Anaya_Perpus" />
         </figure>
@@ -196,7 +203,8 @@
           </div>
         </div>
       </div>
-      <div class="card bg-base-100 w-full md:w-96 shadow-xl mb-4 md:mb-0">
+      <div data-aos="zoom-in-left" data-aos-duration="2000"
+        class="card bg-base-100 w-full md:w-96 shadow-xl mb-4 md:mb-0">
         <figure>
           <img src="psk.png" alt="Anaya_Perpus" />
         </figure>
@@ -212,7 +220,8 @@
           </div>
         </div>
       </div>
-      <div class="card bg-base-100 w-full md:w-96 shadow-xl mb-4 md:mb-0">
+      <div data-aos="zoom-in-right" data-aos-duration="3000" data-aos-offset="300" data-aos-easing="ease-in-sine"
+        class="card bg-base-100 w-full md:w-96 shadow-xl mb-4 md:mb-0">
         <figure>
           <img src="moviie.png" alt="Anaya_Perpus" />
         </figure>
@@ -228,7 +237,8 @@
           </div>
         </div>
       </div>
-      <div class="card bg-base-100 w-full md:w-96 shadow-xl mb-4 md:mb-0">
+      <div data-aos="zoom-in-left" data-aos-duration="2000"
+        class="card bg-base-100 w-full md:w-96 shadow-xl mb-4 md:mb-0">
         <figure>
           <img src="todo.png" alt="Anaya_Perpus" />
         </figure>
@@ -246,7 +256,8 @@
       </div>
     </div>
     <div id="abot" class="px-4 py-12">
-      <p class="text-center pb-20 text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-orange-600 to-yellow-700"
+      <p data-aos="zoom-in-down" data-aos-duration="3000"
+        class="text-center pb-20 text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-t from-blue-500 via-orange-600 to-yellow-700"
         7 id="projek">About Me !</p>
       <ul class="timeline timeline-snap-icon max-md:timeline-horizontal timeline-vertical ">
         <li>
@@ -259,7 +270,7 @@
           </div>
 
 
-          <div class="timeline-start mb-10 md:text-end">
+          <div data-aos="flip-up" data-aos-duration="3000" class="timeline-start mb-10 md:text-end">
             <time class="font-mono italic">2021-2024</time>
             <div class="text-lg font-black poppins-regular">SMKN 2 Trenggalek</div>
             alumni of SMKN 2 Trenggalek majoring in software engineering and have the desire to continue to develop and
@@ -276,7 +287,7 @@
                 clip-rule="evenodd" />
             </svg>
           </div>
-          <div class="timeline-end mb-10">
+          <div data-aos="flip-down" data-aos-duration="3000" class="timeline-end mb-10">
             <time class="font-mono italic">1january 2023- 14 juli 2023</time>
             <div class="text-lg font-black">Frontend Web Development</div>
             frontend web developer internship at Manggala Teknologi Nusantara in Papar Pare Kediri for 6 months and
@@ -290,5 +301,9 @@
       <p>Copyright © 2024 - All right reserved by Alvinn_t.ahmd</p>
     </footer>
 </body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
 </html>
